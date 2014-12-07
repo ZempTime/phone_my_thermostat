@@ -18,7 +18,7 @@ class SensiClient
     self.class.get("/mode")
   end
 
-  def mode(mode)
+  def setMode(mode)
     self.class.post("/mode", body: {mode:  mode} )
   end
 
