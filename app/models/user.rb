@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   has_one :thermostat
   has_many :text_messages
+  has_many :call_messages
 
   phony_normalize :phone_number, :default_country_code => 'US'
 

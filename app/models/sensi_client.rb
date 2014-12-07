@@ -1,12 +1,12 @@
 class SensiClient
   include HTTParty
-  base_uri 'http://2c617bd9.ngrok.com'
+  base_uri '104.131.86.163:8080'
 
   def temperature
     self.class.get("/temperature")
   end
 
-  def desiredTemperature
+  def getDesiredTemperature
     self.class.get("/desiredTemperature")
   end
 
