@@ -24,22 +24,25 @@ class ThermostatConverser
 
   class QueryTarget
     def self.execute(message)
-      "Your place is set to 68. omg"
+      response = $sensi.desiredTemperature
+      target_temp = response.body
+      "Your place is set to #{target_temp} - omg"
     end
   end
 
   class SetTarget
     def self.execute(message)
       target = message.body.to_i
+      response = $sensi.desiredTemperature(target)
       "#{target}! Your Place! Sounds cool."
     end
   end
 
   class QueryCurrent
     def self.execute(message)
-      response = SensiClient.temperature
+      response = $sensi.temperature
       current_temp = response.body
-      "Your place is currently 83. And your happiness sickens me."
+      "Your place is currently #{current_temp}. And your happiness sickens me."
     end
   end
 
@@ -51,6 +54,7 @@ class ThermostatConverser
 
   class SetAway
     def self.execute(message)
+      $sensi.away_on
       "Away mode engaged. I'll miss you! Come back soon!"
     end
   end

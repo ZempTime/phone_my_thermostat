@@ -1,6 +1,6 @@
 class SensiClient
   include HTTParty
-  base_uri 'provided.by.tim'
+  base_uri 'http://2c617bd9.ngrok.com'
 
   def temperature
     self.class.get("/temperature")
