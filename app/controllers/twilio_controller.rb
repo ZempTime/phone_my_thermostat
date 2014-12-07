@@ -85,7 +85,7 @@ class TwilioController < ApplicationController
   private
 
     def valid_temperature?(temp)
-      temp.between?(ThermostatConverser::MIN_TEMP + 1, ThermostatConverser::MAX_TEMP - 1)
+      temp.between?(ThermostatConverser::MIN_TEMP, ThermostatConverser::MAX_TEMP)
     end
 
 end

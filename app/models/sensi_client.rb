@@ -38,4 +38,8 @@ class SensiClient
     self.class.get("/thermostat")
   end
 
+  def duration
+    self.class.get("/duration")
+  end
+
 end
