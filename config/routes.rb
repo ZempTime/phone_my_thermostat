@@ -11,5 +11,7 @@ Rails.application.routes.draw do
   get 'main/signed_in'
   get 'main/not_signed_in'
 
+  get 'alert/duration'
+
   root to: 'main#not_signed_in'
 end
