@@ -5,5 +5,6 @@ class MainController < ApplicationController
   end
 
   def not_signed_in
+  	@sensi = $sensi
   end
 end

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'dumb_phone/index'
+
   devise_for :users
 
   post 'twilio/message', to: 'twilio#receive_message'
