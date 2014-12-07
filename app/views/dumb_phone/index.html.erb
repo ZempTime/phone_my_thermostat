@@ -1,14 +1,16 @@
-<h1>DumbPhone For Sensi</h1>
+<center>
+	<h1>DumbPhone For Sensi</h1>
+</center>
 <center>
 	<%#= form_for @sensi, url: {action: "GET"}, html: {class: "phone_display_form"} do |f| %>
 		<p>----------------</p>
-		
-		<center><%= @response.temperature.parsed_response %><span> -> </span><%= @sensi.getDesiredTemperature.parsed_response %></center>
+		<center><%= @sensi.temperature.parsed_response %><span> -> </span><%= @sensi.getDesiredTemperature.parsed_response %></center>
 		<p>----------------</p>
 		
 		<%#= f.text_field, :mode, :class => 'heat cool away' %>
-		<%= @mode %>
+		<%= @sensi.mode %>
 		<center>
+			<%= link_to '[refresh]' %>
 			<%#= f.submit 'on/off' %>
 		</center>
 	<%# end %>

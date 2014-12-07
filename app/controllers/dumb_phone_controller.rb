@@ -1,5 +1,9 @@
 class DumbPhoneController < ApplicationController
   def index
-  	@response = $sensi
+  	@sensi = $sensi
+  end
+
+  def create
+  	
   end
 end
