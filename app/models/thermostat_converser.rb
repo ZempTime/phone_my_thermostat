@@ -24,7 +24,7 @@ class ThermostatConverser
 
   class QueryTarget
     def self.execute(message)
-      response = $sensi.desiredTemperature
+      response = $sensi.getDesiredTemperature
       target_temp = response.body
       "Your place is set to #{target_temp} - omg"
     end

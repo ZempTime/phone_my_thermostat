@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post 'twilio/call/intro', to: 'twilio#intro'
   post 'twilio/call/handleGather', to: 'twilio#handleGather'
   post 'twilio/call/setTemp', to: 'twilio#setTemp'
+  get 'twilio/call/alertCall', to: 'twilio#alertCall'
 
   get 'main/signed_in'
   get 'main/not_signed_in'

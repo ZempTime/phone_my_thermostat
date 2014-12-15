@@ -27,8 +27,9 @@ class TwilioController < ApplicationController
       r.Gather :numDigits => '1', :action => '/twilio/call/handleGather' do |s|
         s.Say "Hey, this is Sen See. Your current temperature is #{current_temp} degrees, and I'm set for #{desired_temp} degrees.", :voice => 'alice'
         s.Say "Press 1 to set a new desired temperature.", :voice => 'alice'
-        s.Say "Press 2 to enable away mode.", :voice => 'man'
-        s.Say "Press any other key to start over.", :voice => 'woman'
+        s.Say "Press 2 to enable away mode.", :voice => 'alice'
+        s.Say "Press 3 if you wanna build a snow man.", :voice => 'alice'
+        s.Say "Press any other key to start over.", :voice => 'alice'
         s.Pause 1
       end
     end
@@ -41,7 +42,7 @@ class TwilioController < ApplicationController
 
       response = Twilio::TwiML::Response.new do |r|
         r.Gather :numDigits => '2', :action => '/twilio/call/setTemp' do |s|
-          s.Say "Dial in your desired temperature between 45 and 98 degrees."
+          s.Say "Dial in your desired temperature between 45 and 98 degrees.", :voice => 'alice'
           s.Pause 1
         end
       end
@@ -51,7 +52,14 @@ class TwilioController < ApplicationController
       $sensi.away_on
 
       response = Twilio::TwiML::Response.new do |r|
-        r.Say "Away mode enabled. I'll miss you. Come back soon. I love you. I, love you."
+        r.Say "Away mode enabled. I'll miss you. Come back soon. I love you. I, love you.", :voice => 'alice'
+      end
+
+      render_twiml response
+    elsif params["Digits"] == '3'
+
+      response = Twilio::TwiML::Response.new do |r|
+        r.Play 'http://www.televisiontunes.com/themesongs/Frozen%20-%20Do%20You%20Want%20to%20Build%20a%20Snowman.mp3'
       end
 
       render_twiml response
@@ -65,15 +73,15 @@ class TwilioController < ApplicationController
       $sensi.desiredTemperature(temp.to_i.to_s)
 
       response = Twilio::TwiML::Response.new do |r|
-        r.Say "Your temperature has been set to #{temp}.", voice: "man"
-        r.Say "fuck, oh my god, shit, this is too hot, damn it", voice: "alice"
+        r.Say "Your temperature has been set to #{temp}.", :voice => 'alice'
+        r.Say "Nice talking with you. Goodbye!", :voice => 'alice'
       end
 
       render_twiml response
     else
       response = Twilio::TwiML::Response.new do |r|
         r.Gather :numDigits => '2', :action => '/twilio/call/setTemp' do |s|
-          s.Say "Dial in your desired temperature between 45 and 98 degrees.", voice: "man"
+          s.Say "Dial in your desired temperature between 45 and 98 degrees.", :voice => 'alice'
           s.Pause 1
         end
       end

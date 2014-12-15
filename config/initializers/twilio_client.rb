@@ -14,6 +14,14 @@ class TwilioClient
     )
   end
 
+  def self.call
+    client = Twilio::REST::Client.new ACCOUNT_SID, AUTH_TOKEN
+    call = client.calls.create(:url => "http://demo.twilio.com/docs/voice.xml",
+      :to => "+13144795663",
+      :from => "+13148992442")
+  end
+
+
 end
 
 
