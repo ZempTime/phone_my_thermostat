@@ -45,7 +45,7 @@ group :development do
 end
 
 gem 'bootstrap-sass', '~> 3.2.0.2'
-gem 'devise', '~> 3.4.1'
+gem 'devise', '~> 4.6.0'
 gem 'phony_rails', '~> 0.8.1'
 gem 'twilio-ruby', '~> 3.14.2'
 
