@@ -54,4 +54,4 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0.2'
 end
 
-gem 'httparty', '~> 0.13.3'
+gem 'httparty', '~> 0.21.0'
