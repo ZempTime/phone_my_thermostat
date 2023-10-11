@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '6.0.3.5'
+gem 'rails', '7.1.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -17,7 +17,7 @@ gem 'coffee-rails', '~> 4.2.2'
 # Use jquery as the JavaScript library
 gem 'jquery-rails', '>= 4.0.1'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks', '>= 2.5.2'
+gem 'turbolinks', '>= 2.5.3'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
@@ -39,7 +39,7 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 group :development do
-  gem "better_errors"
+  gem "better_errors", ">= 2.3.0"
   gem "binding_of_caller"
   gem 'quiet_assets'
 end
@@ -51,7 +51,7 @@ gem 'twilio-ruby', '~> 3.14.2'
 
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.0.2'
+  gem 'rspec-rails', '~> 3.1.0'
 end
 
 gem 'httparty', '~> 0.13.3'
