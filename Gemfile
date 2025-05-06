@@ -51,7 +51,7 @@ gem 'twilio-ruby', '~> 3.14.2'
 
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.0.2'
+  gem 'rspec-rails', '~> 8.0.0'
 end
 
 gem 'httparty', '~> 0.13.3'
